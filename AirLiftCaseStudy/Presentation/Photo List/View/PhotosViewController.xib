@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotosViewController" customModule="AirLiftCaseStudy" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="8FO-Of-eKL" id="AJs-lP-XUL"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="NWc-yM-ga6">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMs-qB-M9I">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="E0M-dD-MQi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <blurEffect style="regular"/>
+                </visualEffectView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="8FO-Of-eKL">
+                    <rect key="frame" x="8" y="44" width="398" height="818"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewLayout key="collectionViewLayout" id="GaA-rm-n3E" customClass="WaterFallLayout" customModule="AirLiftCaseStudy" customModuleProvider="target"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="yDD-sS-oZy"/>
+                        <outlet property="delegate" destination="-1" id="hff-Ce-nDS"/>
+                    </connections>
+                </collectionView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8FO-Of-eKL" secondAttribute="trailing" constant="8" id="3bd-Qf-O5v"/>
+                <constraint firstItem="8FO-Of-eKL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="6z6-Nl-DJU"/>
+                <constraint firstItem="cMs-qB-M9I" firstAttribute="width" secondItem="NWc-yM-ga6" secondAttribute="width" id="JoO-fZ-9oE"/>
+                <constraint firstItem="cMs-qB-M9I" firstAttribute="height" secondItem="NWc-yM-ga6" secondAttribute="height" id="NfH-hf-n8e"/>
+                <constraint firstAttribute="trailing" secondItem="NWc-yM-ga6" secondAttribute="trailing" id="OE7-iw-9Ek"/>
+                <constraint firstItem="cMs-qB-M9I" firstAttribute="centerX" secondItem="NWc-yM-ga6" secondAttribute="centerX" id="T0x-pY-GWL"/>
+                <constraint firstItem="NWc-yM-ga6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="coQ-bQ-za7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="8FO-Of-eKL" secondAttribute="bottom" id="dqg-yB-726"/>
+                <constraint firstItem="cMs-qB-M9I" firstAttribute="centerY" secondItem="NWc-yM-ga6" secondAttribute="centerY" id="g4Q-fX-QH7"/>
+                <constraint firstItem="NWc-yM-ga6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ie3-j5-TyT"/>
+                <constraint firstItem="8FO-Of-eKL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="n05-yl-aM6"/>
+                <constraint firstAttribute="bottom" secondItem="NWc-yM-ga6" secondAttribute="bottom" id="o46-cy-qAB"/>
+            </constraints>
+            <point key="canvasLocation" x="-7" y="33"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="backgroundImage" width="1080" height="1349"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
