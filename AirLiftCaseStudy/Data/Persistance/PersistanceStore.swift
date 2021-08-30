@@ -38,11 +38,15 @@ struct PhotoPersistanceStore: PersistanceStore {
     }
     
     func loadPhotos(offSet: Int) -> [Photo]? {
-        var photos: [Photo] = []
-        let result = PersistentStorage.shared.fetchManagedObject(managedObject: CDPhoto.self, offSet: offSet)
-        result?.forEach({ cdPhoto in
-            photos.append(cdPhoto.convertToPhoto())
-        })
+        var photos: [Photo]? = nil
+        // performAndWait would ensure the thread for the context since we can call loadPhotos from any thread
+        // this ensure concurrency and thread safety of the context on main thread
+        context.performAndWait {
+            let result = PersistentStorage.shared.fetchManagedObject(managedObject: CDPhoto.self, offSet: offSet)
+            photos = result?.map ({ cdPhoto in
+                cdPhoto.convertToPhoto()
+            })
+        }
         return photos
     }
 }
