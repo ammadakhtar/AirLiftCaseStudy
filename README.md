@@ -1,4 +1,4 @@
-# AirLiftCaseStudy
+# Clean Architecture MVVM-C
 
 ![Platform](https://img.shields.io/badge/Platform-iOS-orange.svg)
 ![Languages](https://img.shields.io/badge/Language-Swift-orange.svg)
